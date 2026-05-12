@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetAmigos - Campanha de Adoção de Animais</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <span class="logo-icon">🐾</span>
+                <h1>PetAmigos</h1>
+            </div>
+            <nav class="nav-menu">
+                <a href="#home" onclick="showSection('home')">Home</a>
+                <a href="#animais" onclick="showSection('animais')">Animais</a>
+                <a href="#formulario" onclick="showSection('formulario')">Adotar</a>
+                <a href="#login" onclick="showSection('login')" id="btnLogin">Login</a>
+                <a href="#" onclick="logout()" id="btnLogout" class="hidden">Sair</a>
+                <span id="usuarioLogado" class="usuario-info"></span>
+            </nav>
+        </div>
+    </header>
+
+    
+    <main class="container">
+
+        
+        <section id="home" class="section ativo">
+            <div class="hero">
+                <div class="hero-content">
+                    <h2>Bem-vindo ao PetAmigos</h2>
+                    <p>Encontre seu companheiro perfeito para a vida toda</p>
+                    <p class="sub-texto">Somos uma campanha voluntária dedicada a conectar animais de estimação com famílias amorosas</p>
+                    <button class="btn-principal" onclick="showSection('animais')">Ver Animais Disponíveis</button>
+                </div>
+                <div class="hero-image">🦴</div>
+            </div>
+
+            <div class="info-cards">
+                <div class="card">
+                    <div class="card-icon">❤️</div>
+                    <h3>Animais Resgatados</h3>
+                    <p>Ajudamos animais abandonados a encontrar um novo lar</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🏠</div>
+                    <h3>Famílias Felizes</h3>
+                    <p>Centenas de histórias de sucesso todos os anos</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">💚</div>
+                    <h3>Programa Voluntário</h3>
+                    <p>Junte-se a nossa missão de salvar vidas</p>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="animais" class="section">
+            <h2>Animais Disponíveis para Adoção</h2>
+            <div class="filtros">
+                <button class="filtro-btn ativo" onclick="filtrarAnimais('todos')">Todos</button>
+                <button class="filtro-btn" onclick="filtrarAnimais('cachorro')">Cães</button>
+                <button class="filtro-btn" onclick="filtrarAnimais('gato')">Gatos</button>
+                <button class="filtro-btn" onclick="filtrarAnimais('coelho')">Coelhos</button>
+                <button class="filtro-btn" onclick="filtrarAnimais('hamster')">Hamsters</button>
+                <button class="filtro-btn" onclick="filtrarAnimais('porco-espinho')">Porcos-Espinhos</button>
+                <button class="filtro-btn" onclick="filtrarAnimais('porquinho-da-india')">Porquinhos da Índia</button>
+                <button class="filtro-btn" onclick="filtrarAnimais('furão')">Furões</button>
+                <button class="filtro-btn" onclick="filtrarAnimais('chinchila')">Chinchilas</button>
+                <button class="filtro-btn" onclick="filtrarAnimais('esquilo')">Esquilos</button>
+            </div>
+            <div id="listaAnimais" class="animais-grid">
+                
+            </div>
+        </section>
+
+        
+        <section id="detalhesAnimal" class="section">
+            <button class="btn-voltar" onclick="showSection('animais')">← Voltar</button>
+            <div class="detalhes-container">
+                <div class="detalhes-imagem">
+                    <span id="detalhesIcon" class="animal-grande">🐕</span>
+                </div>
+                <div class="detalhes-info">
+                    <h2 id="detalheNome">Nome do Animal</h2>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>Raça:</label>
+                            <p id="detalhesRaca">-</p>
+                        </div>
+                        <div class="info-item">
+                            <label>Idade:</label>
+                            <p id="detalhesIdade">-</p>
+                        </div>
+                        <div class="info-item">
+                            <label>Tipo:</label>
+                            <p id="detalhesTipo">-</p>
+                        </div>
+                        <div class="info-item">
+                            <label>Gênero:</label>
+                            <p id="detalhesGenero">-</p>
+                        </div>
+                    </div>
+                    <div class="descricao">
+                        <h3>Sobre</h3>
+                        <p id="detalhesDescricao">-</p>
+                    </div>
+                    <div class="historico-animal">
+                        <h3>Histórico</h3>
+                        <div id="historicoAnimal" class="historico-list">
+                            
+                        </div>
+                    </div>
+                    <button class="btn-principal" onclick="iniciarAdocao()">Quero Adotar</button>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="formulario" class="section">
+            <h2>Formulário de Adoção</h2>
+            <p class="instrucao">Preencha o formulário abaixo para expressar seu interesse em adotar um animal</p>
+            
+            <form id="formAdocao" class="form-adocao">
+                <div class="form-group">
+                    <label for="adocaoNome">Nome Completo *</label>
+                    <input type="text" id="adocaoNome" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="adocaoEmail">Email *</label>
+                        <input type="email" id="adocaoEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="adocaoTelefone">Telefone *</label>
+                        <input type="tel" id="adocaoTelefone" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="adocaoEndereco">Endereço Completo *</label>
+                    <input type="text" id="adocaoEndereco" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="adocaoAnimal">Animal de Interesse *</label>
+                        <select id="adocaoAnimal" required>
+                            <option value="">Selecione um animal</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="adocaoRazao">Razão da Adoção *</label>
+                        <select id="adocaoRazao" required>
+                            <option value="">Selecione</option>
+                            <option value="companhia">Companhia</option>
+                            <option value="familia">Para a família</option>
+                            <option value="resgate">Resgate</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="adocaoLocal">Local de Retirada do Animal *</label>
+                    <select id="adocaoLocal" required>
+                        <option value="">Selecione um local</option>
+                        <option value="local1">Colégio Paulo de Tarso - Rua Mazzini, 61 - Aclimação, São Paulo - SP, 01528-000</option>
+                        <option value="local2">Colégio Paulo de Tarso Baby - R. Alabastro, 338 - Aclimação, São Paulo - SP, 01531-010</option>
+                        <option value="local3">Colégio Bilíngue Paulo de Tarso Baby & Kids - Praça Gen. Polidoro, 31 - Aclimação, São Paulo - SP, 01531-050</option>
+                    </select>
+                </div>
+
+                <div id="infoLocal" class="info-local hidden">
+                    <div class="local-card">
+                        <h4>📍 Local Selecionado:</h4>
+                        <p id="enderecoSelecionado"></p>
+                    </div>
+                </div>
+
+                <div id="diasHorarios" class="hidden">
+                    <div class="form-group">
+                        <label for="adocaoDia">Dia da Retirada *</label>
+                        <select id="adocaoDia" required>
+                            <option value="">Selecione um dia</option>
+                            <option value="segunda">Segunda-Feira</option>
+                            <option value="terca">Terça-Feira</option>
+                            <option value="quarta">Quarta-Feira</option>
+                            <option value="quinta">Quinta-Feira</option>
+                            <option value="sexta">Sexta-Feira</option>
+                            <option value="sabado">Sábado</option>
+                        </select>
+                    </div>
+
+                    <div id="infoHorarioDisponivel" class="info-horario hidden"></div>
+
+                    <div class="form-group">
+                        <label for="adocaoHorario">Horário da Retirada *</label>
+                        <select id="adocaoHorario" required>
+                            <option value="">Selecione um horário</option>
+                        </select>
+                    </div>
+
+                    <div id="infoAgendamento" class="info-agendamento hidden">
+                        <div class="agendamento-card">
+                            <h4>⏰ Sua Retirada Está Agendada Para:</h4>
+                            <p id="resumoAgendamento"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="adocaoMotivo">Conte-nos por que quer adotar *</label>
+                    <textarea id="adocaoMotivo" rows="4" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="adocaoExperiencia">Você tem experiência com animais de estimação? *</label>
+                    <select id="adocaoExperiencia" required>
+                        <option value="">Selecione</option>
+                        <option value="sim">Sim, tenho experiência</option>
+                        <option value="pouca">Tenho pouca experiência</option>
+                        <option value="nao">Não, primeira vez</option>
+                    </select>
+                </div>
+
+                <div class="form-group checkbox">
+                    <label>
+                        <input type="checkbox" id="adocaoAceite" required>
+                        Aceito os termos e condições de adoção
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-principal">Enviar Candidatura</button>
+            </form>
+        </section>
+
+        <section id="reservas" class="section">
+            <div class="reserva-container">
+                <div id="reservaMensagem" class="reserva-mensagem hidden">Reserva concluída, parabéns!</div>
+                <h2>Reserva Concluída</h2>
+                <p class="instrucao">Sua reserva foi registrada com sucesso. Veja os detalhes abaixo:</p>
+
+                <div class="reserva-card">
+                    <p><strong>Animal reservado:</strong> <span id="reservaAnimal"></span></p>
+                    <p><strong>Raça:</strong> <span id="reservaRaca"></span></p>
+                    <p><strong>Gênero:</strong> <span id="reservaGenero"></span></p>
+                    <p><strong>Local de retirada:</strong> <span id="reservaLocal"></span></p>
+                    <p><strong>Dia da retirada:</strong> <span id="reservaDia"></span></p>
+                    <p><strong>Horário escolhido:</strong> <span id="reservaHorario"></span></p>
+                    <p><strong>Nome do candidato:</strong> <span id="reservaNome"></span></p>
+                    <p><strong>Email:</strong> <span id="reservaEmail"></span></p>
+                    <p><strong>Telefone:</strong> <span id="reservaTelefone"></span></p>
+                </div>
+
+                <div class="reserva-actions">
+                    <button class="btn-principal" onclick="showSection('home')">Voltar para Home</button>
+                    <button class="btn-secundario" onclick="showSection('animais')">Ver outros animais</button>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="login" class="section">
+            <div class="auth-container">
+                <div class="auth-box">
+                    <h2>Login / Cadastro</h2>
+                    
+                    <form id="formLogin" class="form-auth">
+                        <div class="form-group">
+                            <label for="loginEmail">Email *</label>
+                            <input type="email" id="loginEmail" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="loginSenha">Senha *</label>
+                            <input type="password" id="loginSenha" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="loginNome">Nome (apenas para novo cadastro) </label>
+                            <input type="text" id="loginNome">
+                        </div>
+
+                        <button type="button" class="btn-principal" onclick="fazerLogin()">Login</button>
+                        <button type="button" class="btn-secundario" onclick="fazerCadastro()">Cadastrar</button>
+                    </form>
+
+                    <div id="mensagemAuth" class="mensagem-auth"></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    
+    <div id="modalAnimal" class="modal hidden">
+        <div class="modal-content">
+            <button class="btn-fechar" onclick="fecharModal()">×</button>
+            <div id="modalBody">
+                
+            </div>
+        </div>
+    </div>
+
+    
+    <footer class="footer">
+        <p>&copy; 2026 PetAmigos - Campanha de Adoção de Animais. Todos os direitos reservados. 🐾</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
