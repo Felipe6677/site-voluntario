@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PetAmigos - Campanha de Adoção de Animais</title>
+    <title>PetAmigos | Colégio Paulo de Tarso - Campanha de Adoção de Animais</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,11 +11,17 @@
     <header class="header">
         <div class="header-container">
             <div class="logo">
-                <span class="logo-icon">🐾</span>
-                <h1>PetAmigos</h1>
+                <img src="https://colegiopaulodetarso.com.br/wp-content/uploads/2024/09/colpaulotarso-logo-og.png" alt="Logotipo Colégio Paulo de Tarso">
+                <div>
+                    <h1>PetAmigos</h1>
+                    <p>Colégio Paulo de Tarso</p>
+                </div>
             </div>
             <nav class="nav-menu">
                 <a href="#home" onclick="showSection('home')">Home</a>
+                <a href="#sobre" onclick="showSection('sobre')">Projeto</a>
+                <a href="#voluntariado" onclick="showSection('voluntariado')">Ano ONU</a>
+                <a href="#desenvolvedor" onclick="showSection('desenvolvedor')">Desenvolvedor</a>
                 <a href="#animais" onclick="showSection('animais')">Animais</a>
                 <a href="#formulario" onclick="showSection('formulario')">Adotar</a>
                 <a href="#login" onclick="showSection('login')" id="btnLogin">Login</a>
@@ -32,29 +38,106 @@
         <section id="home" class="section ativo">
             <div class="hero">
                 <div class="hero-content">
-                    <h2>Bem-vindo ao PetAmigos</h2>
-                    <p>Encontre seu companheiro perfeito para a vida toda</p>
-                    <p class="sub-texto">Somos uma campanha voluntária dedicada a conectar animais de estimação com famílias amorosas</p>
-                    <button class="btn-principal" onclick="showSection('animais')">Ver Animais Disponíveis</button>
+                    <div class="faixa-escola">
+                        <img src="https://colegiopaulodetarso.com.br/wp-content/uploads/2024/09/colpaulotarso-logo-og.png" alt="Logo Colégio Paulo de Tarso">
+                        <span>Evento no Colégio Paulo de Tarso</span>
+                    </div>
+                    <h2>PetAmigos no Colégio Paulo de Tarso</h2>
+                    <p>Uma campanha de adoção e doação de animais promovida pela comunidade escolar para apoiar a causa animal na Aclimação.</p>
+                    <p class="sub-texto">No Dia Mundial do Voluntariado, estudantes, famílias e amigos se unem para acolher animais e conscientizar sobre abandono.</p>
+                    <div class="project-highlights">
+                        <div><strong>Quando:</strong> Sábado, 24 de junho de 2026, 9h às 17h</div>
+                        <div><strong>Onde:</strong> Colégio Paulo de Tarso - Rua Mazzini, 61, Aclimação, São Paulo</div>
+                        <div><strong>O que fazer:</strong> acolhimento, atividades educativas, arrecadação e orientação de adoção responsável</div>
+                    </div>
+                    <button class="btn-principal" onclick="showSection('sobre')">Conheça o projeto</button>
                 </div>
-                <div class="hero-image">🦴</div>
+                <div class="hero-image">
+                    <img src="https://colegiopaulodetarso.com.br/wp-content/uploads/2024/09/colpaulotarso-logo-og.png" alt="Logo Colégio Paulo de Tarso">
+                </div>
             </div>
 
             <div class="info-cards">
                 <div class="card">
-                    <div class="card-icon">❤️</div>
-                    <h3>Animais Resgatados</h3>
-                    <p>Ajudamos animais abandonados a encontrar um novo lar</p>
+                    <div class="card-icon">🏫</div>
+                    <h3>Escola como base</h3>
+                    <p>O Colégio Paulo de Tarso abre suas portas para ampliar o impacto social e ambiental do projeto.</p>
                 </div>
                 <div class="card">
-                    <div class="card-icon">🏠</div>
-                    <h3>Famílias Felizes</h3>
-                    <p>Centenas de histórias de sucesso todos os anos</p>
+                    <div class="card-icon">🌍</div>
+                    <h3>Ano do Voluntariado</h3>
+                    <p>Atividade alinhada ao Ano do Voluntariado da ONU, fortalecendo o engajamento comunitário.</p>
                 </div>
                 <div class="card">
-                    <div class="card-icon">💚</div>
-                    <h3>Programa Voluntário</h3>
-                    <p>Junte-se a nossa missão de salvar vidas</p>
+                    <div class="card-icon">🐾</div>
+                    <h3>Causa animal</h3>
+                    <p>Abrimos espaço para adoções responsáveis e apoio a animais em situação de abandono.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre" class="section">
+            <div class="section-intro">
+                <h2>Sobre o Projeto</h2>
+                <p>PetAmigos é uma ação social e de voluntariado do Colégio Paulo de Tarso que une alunos, professores e a comunidade para ajudar animais abandonados e promover adoções conscientes.</p>
+            </div>
+            <div class="sobre-grid">
+                <article class="sobre-card">
+                    <h3>Nome do projeto</h3>
+                    <p>PetAmigos - Adoção Responsável no Colégio Paulo de Tarso</p>
+                </article>
+                <article class="sobre-card">
+                    <h3>Local</h3>
+                    <p>Colégio Paulo de Tarso, Rua Mazzini, 61 - Aclimação, São Paulo - SP.</p>
+                </article>
+                <article class="sobre-card">
+                    <h3>Data do Evento</h3>
+                    <p>24 de junho de 2026, das 9h às 17h, com praça de adoção e ações educativas sobre cuidado animal.</p>
+                </article>
+            </div>
+            <div class="causa-text">
+                <h3>Por que esse projeto é importante?</h3>
+                <p>O abandono de animais é uma realidade no Brasil: estima-se mais de 30 milhões de cães e gatos vivendo em situação de rua ou em lares inadequados. A falta de orientação e moradia leva esses animais a enfrentar fome, doenças e abandono emocional.</p>
+                <p>O PetAmigos busca reduzir esse impacto oferecendo adoções responsáveis, apoio veterinário e educação para famílias que querem adotar com segurança.</p>
+            </div>
+        </section>
+
+        <section id="voluntariado" class="section">
+            <div class="section-intro">
+                <h2>Ano do Voluntariado da ONU</h2>
+                <p>Esta campanha é inspirada no Ano do Voluntariado, uma oportunidade para fortalecer ações solidárias e transformar a realidade local.</p>
+            </div>
+            <div class="voluntario-cards">
+                <div class="card">
+                    <div class="card-icon">🤝</div>
+                    <h3>Missão dos voluntários</h3>
+                    <p>Receber visitantes, apresentar animais, auxiliar na triagem e divulgar cuidados básicos de bem-estar.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📚</div>
+                    <h3>Educação e sensibilização</h3>
+                    <p>Oficinas e painéis explicam a importância da castração, do respeito animal e da adoção responsável.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🛠️</div>
+                    <h3>Apoio logístico</h3>
+                    <p>Voluntários ajudam na organização dos espaços, coleta de doações e agendamento de visitas com famílias.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="desenvolvedor" class="section">
+            <div class="section-intro">
+                <h2>Desenvolvedor</h2>
+                <p>Conheça quem criou essa página e como acompanhar outros projetos.</p>
+            </div>
+            <div class="dev-card">
+                <img src="https://api.dicebear.com/6.x/initials/svg?seed=Felipe6677" alt="Avatar do desenvolvedor">
+                <div>
+                    <h3>Felipe Farias</h3>
+                    <p>Desenvolvedor web em formação, que gosta de tecnologia e projetos sociais que ajudam o bem-estar animal.</p>
+                    <p>Este site foi criado para tornar o projeto mais realista e trazer informações claras sobre adoção, voluntariado e a escola parceira.</p>
+                    <a href="https://github.com/Felipe6677" target="_blank" rel="noopener noreferrer">github.com/Felipe6677</a>
                 </div>
             </div>
         </section>
@@ -311,7 +394,7 @@
 
     
     <footer class="footer">
-        <p>&copy; 2026 PetAmigos - Campanha de Adoção de Animais. Todos os direitos reservados. 🐾</p>
+        <p>&copy; 2026 PetAmigos - Campanha de Adoção de Animais. Projeto realizado com apoio do Colégio Paulo de Tarso. 🐾</p>
     </footer>
 
     <script src="script.js"></script>

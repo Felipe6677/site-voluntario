@@ -48,26 +48,40 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .logo {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    font-size: 1.8rem;
+    gap: 0.75rem;
     font-weight: bold;
     cursor: pointer;
     transition: transform 0.3s ease;
 }
 
 .logo:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
+}
+
+.logo img {
+    width: 36px;
+    height: auto;
+    border-radius: 8px;
 }
 
 .logo h1 {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     color: var(--amarelo-claro);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    margin: 0;
+}
+
+.logo p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    margin: 0;
 }
 
 .logo-icon {
@@ -168,6 +182,143 @@ body {
     font-size: 8rem;
     text-align: center;
     animation: float 3s ease-in-out infinite;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 24px;
+    box-shadow: var(--sombra);
+}
+
+.faixa-escola {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 0.8rem 1rem;
+    border-radius: 999px;
+    margin-bottom: 1.5rem;
+}
+
+.faixa-escola img {
+    width: 40px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.faixa-escola span {
+    color: var(--amarelo-claro);
+    font-weight: 700;
+}
+
+.section-intro {
+    max-width: 900px;
+    margin: 0 auto 2rem;
+    text-align: center;
+}
+
+.section-intro h2 {
+    color: var(--azul-marinho);
+    margin-bottom: 0.8rem;
+    font-size: 2rem;
+}
+
+.section-intro p {
+    color: #444;
+    line-height: 1.8;
+}
+
+.project-highlights {
+    display: grid;
+    gap: 0.85rem;
+    margin: 1.5rem 0 2rem;
+    color: #f5f5f5;
+}
+
+.project-highlights div {
+    background: rgba(255, 255, 255, 0.14);
+    padding: 1rem 1.2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.sobre-grid,
+.voluntario-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.sobre-card,
+.dev-card,
+.voluntario-cards .card {
+    background: var(--branco);
+    padding: 1.8rem;
+    border-radius: 12px;
+    box-shadow: var(--sombra);
+    min-height: 180px;
+}
+
+.sobre-card h3,
+.voluntario-cards .card h3,
+.dev-card h3 {
+    color: var(--azul-marinho);
+    margin-bottom: 0.75rem;
+}
+
+.sobre-card p,
+.causa-text p,
+.dev-card p,
+.voluntario-cards .card p {
+    color: #555;
+    line-height: 1.7;
+}
+
+.causa-text {
+    background: var(--branco);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--sombra);
+    color: #444;
+    margin-bottom: 2rem;
+}
+
+.causa-text h3 {
+    color: var(--azul-marinho);
+    margin-bottom: 1rem;
+}
+
+.dev-card {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.dev-card img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 22px;
+    border: 4px solid var(--azul-marinho);
+}
+
+.dev-card a {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--azul-escuro);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.dev-card a:hover {
+    color: var(--amarelo-escuro);
+}
+
+.voluntario-cards .card {
+    min-height: 190px;
 }
 
 @keyframes float {
@@ -653,15 +804,6 @@ body {
     margin-bottom: 1rem;
 }
 
-.btn-secundario {
-    background: var(--amarelo-claro);
-    margin-left: 0.5rem;
-}
-
-.btn-secundario:hover {
-    background: var(--amarelo-escuro);
-}
-
 .mensagem-auth {
     padding: 1rem;
     margin-top: 1rem;
@@ -778,15 +920,20 @@ body {
 
 @media (max-width: 768px) {
     .header-container {
-        flex-direction: column;
+        justify-content: center;
         gap: 1rem;
     }
 
     .nav-menu {
         flex-direction: column;
-        gap: 1rem;
+        gap: 0.75rem;
         width: 100%;
         text-align: center;
+    }
+
+    .logo {
+        width: 100%;
+        justify-content: center;
     }
 
     .hero {
@@ -831,8 +978,16 @@ body {
 }
 
 @media (max-width: 480px) {
+    .logo {
+        justify-content: center;
+    }
+
     .logo h1 {
-        font-size: 1.3rem;
+        font-size: 1rem;
+    }
+
+    .logo p {
+        font-size: 0.8rem;
     }
 
     .hero-content h2 {
